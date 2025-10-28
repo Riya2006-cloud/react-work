@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #113e6a, ghostwhite);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 950px;
+  max-width: 100%;
+  background: ghostwhite;
+  border-radius: 20px;
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 1.5s ease;
+}
+
+.form-section {
+  flex: 1;
+  padding: 40px;
+  background: ghostwhite;
+  animation: slideInLeft 1s ease;
+}
+
+.form-section h2 {
+  color: #113e6a;
+  margin-bottom: 10px;
+  font-size: 26px;
+  animation: fadeUp 1.2s ease;
+}
+
+.form-section p {
+  color: #444;
+  margin-bottom: 20px;
+  font-size: 15px;
+  animation: fadeUp 1.5s ease;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-section input:focus {
+  border-color: #113e6a;
+  box-shadow: 0px 0px 8px rgba(17, 62, 106, 0.6);
+  transform: scale(1.02);
+}
+
+.signin-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #113e6a;
+  color: ghostwhite;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.signin-btn:hover {
+  background: #0d2d4d;
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(17, 62, 106, 0.4);
+}
+
+.google-btn, .github-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 8px 0;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+.google-btn:hover {
+  background: #f4f4f4;
+  transform: translateX(5px);
+}
+
+.github-btn:hover {
+  background: #f4f4f4;
+  transform: translateX(-5px);
+}
+
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  position: relative;
+}
+
+.divider span {
+  background: ghostwhite;
+  padding: 0 10px;
+  color: #777;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  z-index: 1;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin: 8px 0;
+  color: #555;
+}
+
+.options a {
+  color: #113e6a;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.image-section {
+  flex: 1;
+  overflow: hidden;
+  animation: slideInRight 1s ease;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+  transform: scale(1.1);
+  animation: zoomIn 15s infinite alternate ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.message {
+  margin-top: 10px;
+  color: red;
+  font-size: 13px;
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 20px;
+  }
+  
+  .image-section {
+    display: none;
+  }
+  
+  .form-section {
+    padding: 30px 20px;
+  }
+}
